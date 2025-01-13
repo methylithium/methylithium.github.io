@@ -4,16 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics Charts</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        li {
+            position: relative;
+            padding-left: 30px; /* Отступ для значка */
+            margin-bottom: 10px; /* Расстояние между пунктами */
+        }
+        li:before {
+            content: ''; /* Здесь можно использовать любой символ или иконку */
+            position: absolute;
+            left: 0;
+            color: #3498db; /* Синий цвет для значка */
+        }
+        li a {
+            text-decoration: none;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <a href="pie_cause_death.html">
+    <div class="box">
+        <div class="column">
+        <ul style="list-style-type: none; padding-left:0;">
+    <li><a href="pie_cause_death.html">
         Top 20 Causes of Death (Pie Chart)
-    </a>
-    <a href="age_group_cause_death.html">
+    </a></li>
+    <li><a href="age_group_cause_death.html">
         Top 10 Causes of Death by Age Group (Bar Chart)
-    </a>
-    <a href="line_chart_death_cause.html">
+    </a></li>
+    <li><a href="line_chart_death_cause.html">
         Top 10 Causes of Death by Age Group (Line Chart)
-    </a>
+    </a></li>
+    </ul>
+</div>
+</div>
+    
 </body>
 </html>
