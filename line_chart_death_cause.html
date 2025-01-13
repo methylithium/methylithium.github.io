@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Causes of Death by Age Group (Line Chart)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Top 10 Causes of Death by Age Group</h1>
+  <canvas id="ageDeathChart" width="800" height="400"></canvas>
+
+  <script>
+    const ctx = document.getElementById('ageDeathChart').getContext('2d');
+
+    const data = {
+      labels: ['0-14 years', '15-44 years', '45-64 years', '65+ years'],  // Age groups
+      datasets: [
+        {
+          label: 'Ischemic Heart Disease',
+          data: [0.1, 0.3, 2, 6.6],  // Deaths per age group (in millions)
+          borderColor: '#FF6384',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Stroke',
+          data: [0.05, 0.2, 1.5, 4.25],
+          borderColor: '#36A2EB',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'COPD',
+          data: [0.02, 0.1, 0.8, 2.31],
+          borderColor: '#FFCE56',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Lower Respiratory Infections',
+          data: [0.1, 0.4, 0.5, 1.6],
+          borderColor: '#4BC0C0',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Neonatal Conditions',
+          data: [2, 0, 0, 0],
+          borderColor: '#9966FF',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Lung Cancer',
+          data: [0.01, 0.2, 0.9, 0.69],
+          borderColor: '#FF9F40',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Alzheimer’s Disease',
+          data: [0, 0.1, 0.5, 1],
+          borderColor: '#FFCD56',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Diarrheal Diseases',
+          data: [0.7, 0.5, 0.2, 0.1],
+          borderColor: '#FFB6C1',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Diabetes',
+          data: [0.1, 0.5, 0.8, 0.1],
+          borderColor: '#FFC0CB',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Road Injuries',
+          data: [0.5, 1.2, 0.4, 0.2],
+          borderColor: '#FFD700',
+          fill: false,
+          tension: 0.1
+        }
+      ]
+    };
+
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Age Groups',
+              font: { size: 16 }
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Deaths (Millions)',
+              font: { size: 16 }
+            },
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top'
+          }
+        }
+      }
+    };
+
+    const ageDeathChart = new Chart(ctx, config);
+  </script>
+</body>
+</html>

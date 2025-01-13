@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Causes of Death by Age Group</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Top 10 Causes of Death by Age Group (Global)</h1>
+  <canvas id="deathAgeChart" width="800" height="400"></canvas>
+
+  <script>
+    const ctx = document.getElementById('deathAgeChart').getContext('2d');
+
+    const data = {
+      labels: [
+        'Ischemic heart disease', 'Stroke', 'COPD', 'Lower respiratory infections', 
+        'Neonatal conditions', 'Lung cancer', 'Alzheimer’s', 'Diarrheal diseases', 
+        'Diabetes', 'Road injuries'
+      ],
+      datasets: [
+        {
+          label: '0-14 years',
+          data: [0.1, 0.05, 0.02, 0.1, 2, 0.01, 0, 0.7, 0.1, 0.5],
+          backgroundColor: '#FF6384'
+        },
+        {
+          label: '15-44 years',
+          data: [0.3, 0.2, 0.1, 0.4, 0, 0.2, 0.1, 0.5, 0.5, 1.2],
+          backgroundColor: '#36A2EB'
+        },
+        {
+          label: '45-64 years',
+          data: [2, 1.5, 0.8, 0.5, 0, 0.9, 0.5, 0.2, 0.8, 0.4],
+          backgroundColor: '#FFCE56'
+        },
+        {
+          label: '65+ years',
+          data: [6.6, 4.25, 2.31, 1.6, 0, 0.69, 1, 0.1, 0.1, 0.2],
+          backgroundColor: '#4BC0C0'
+        }
+      ]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        },
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+            title: {
+              display: true,
+              text: 'Causes of Death',
+              font: { size: 16 }
+            }
+          },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Deaths (Millions)',
+              font: { size: 16 }
+            }
+          }
+        }
+      }
+    };
+
+    const deathAgeChart = new Chart(ctx, config);
+  </script>
+</body>
+</html>
